@@ -1,0 +1,17 @@
+equilibration gamd
+&cntrl
+irest=0, ntx=1,
+imin=0,
+ntb=2, ntp=1, taup=2.0, pres0=1.0,
+ntpr=10000, ntwr=10000, ntwx=10000,
+ntt=3, gamma_ln=1.0, tempi=310.0, temp0=310.0,
+ntf=2, ntc=2, iwrap=1,
+ig=-1,
+nstlim=550000000, dt=0.004,
+cut=10.0,
+ioutfm=1,
+
+igamd=2, irest_gamd=0,
+ntcmd=50000000, nteb=500000000, ntave=250000,
+ntcmdprep=500000, ntebprep=500000,
+/
