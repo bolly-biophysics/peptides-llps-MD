@@ -32,7 +32,7 @@ int main()
         return -1;
     }
 
-    // 将侧链原子坐标格式化存入结构数组
+    // Format the atomic coordinates of the main chain and store them in the structure array
     int i = 1, j, k, t;
     float aa;
     while (!infile.eof())
@@ -61,7 +61,7 @@ int main()
         return -1;
     }
 
-    // 将侧链原子坐标格式化存入结构数组
+    // Format the atomic coordinates of the side chain and store them in the structure array
     i = 1;
     while (!infile.eof())
     {
@@ -87,7 +87,6 @@ int main()
     outfile_3.open("ms_corr.dat", ios::out | ios::ate);
     outfile_4.open("ms_corr_s.dat", ios::out | ios::ate);
 
-    // 计算侧链电荷中心随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 1; j <= 80; j = j + 2)
@@ -98,7 +97,6 @@ int main()
         }
     }
 
-    // 计算残基主链部分运动速度矢量的分量
     for (i = 1; i <= t - 1; i++)
     {
         for (j = 1; j <= 40; j++)
@@ -109,7 +107,6 @@ int main()
         }
     }
 
-    // 计算残基侧链部分运动速度矢量的分量
     for (i = 1; i <= t - 1; i++)
     {
         for (j = 1; j <= 40; j++)
@@ -120,7 +117,6 @@ int main()
         }
     }
     
-    // 计算残基主链-残基主链之间运动速度矢量夹角余弦随时间的变化
     for (i = 1; i <= N_main; i++)
     {
         for (j = 1; j <= N_main; j++)
@@ -132,7 +128,6 @@ int main()
         }
     }
     
-    // 计算残基主链-残基主链之间运动速度矢量夹角余弦的平均值(方向关联性)
     for (i = 1; i <= N_main; i++)
     {
         for (j = 1; j <= N_main; j++)
@@ -146,7 +141,6 @@ int main()
         }
     }
     
-    // 计算残基主链-残基主链之间运动速度矢量夹角余弦的标准差
     for (i = 1; i <= N_main; i++)
     {
         for (j = 1; j <= N_main; j++)
@@ -163,7 +157,6 @@ int main()
     }
     outfile_1.close();
     
-    // 计算残基侧链-残基侧链之间运动速度矢量夹角余弦随时间的变化
     for (i = 1; i <= N_side / 2; i++)
     {
         for (j = 1; j <= N_side / 2; j++)
@@ -175,7 +168,6 @@ int main()
         }
     }
     
-    // 计算残基侧链-残基侧链之间运动速度矢量夹角余弦的平均值(方向关联性)
     for (i = 1; i <= N_side / 2; i++)
     {
         for (j = 1; j <= N_side / 2; j++)
@@ -189,7 +181,6 @@ int main()
         }
     }
     
-    // 计算残基侧链-残基侧链之间运动速度矢量夹角余弦的标准差
     for (i = 1; i <= N_side / 2; i++)
     {
         for (j = 1; j <= N_side / 2; j++)
@@ -206,7 +197,6 @@ int main()
     }
     outfile_2.close();
 
-    // 计算残基主链-残基侧链之间运动速度矢量夹角余弦随时间的变化
     for (i = 1; i <= N_main; i++)
     {
         for (j = 1; j <= N_side / 2; j++)
@@ -218,7 +208,6 @@ int main()
         }
     }
     
-    // 计算残基主链-残基侧链之间运动速度矢量夹角余弦的平均值(方向关联性)
     for (i = 1; i <= N_main; i++)
     {
         for (j = 1; j <= N_side / 2; j++)
@@ -232,7 +221,6 @@ int main()
         }
     }
     
-    // 计算残基主链-残基侧链之间运动速度矢量夹角余弦的标准差
     for (i = 1; i <= N_main; i++)
     {
         for (j = 1; j <= N_side / 2; j++)
@@ -249,7 +237,6 @@ int main()
     }
     outfile_3.close();
 
-    // 输出单个残基主链与侧链之间的关联强度
     for (i = 1; i <= N_main; i++)
     {
         for (j = 1; j <= N_side / 2; j++)
