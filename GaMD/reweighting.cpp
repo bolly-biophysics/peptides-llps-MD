@@ -22,7 +22,6 @@ int main()
         return -1;
     }
 
-    // 将原子坐标格式化存入结构数组
     int i = 1, j, k, t, count;
     double aa;
     while (!infile.eof())
@@ -38,7 +37,6 @@ int main()
     outfile_1.open("pmf_original.dat", ios::out | ios::ate);
     outfile_2.open("pmf_reweight.dat", ios::out | ios::ate);
 
-    // 计算a列上下限并打印
     double a_max = 0, a_min = 10000;
     for (i = 1; i <= t; i++)
     {
@@ -49,7 +47,6 @@ int main()
     }
     cout << a_min << " " << a_max << endl;
 
-    // 计算b列上下限并打印
     double b_max = 0, b_min = 10000;
     for (i = 1; i <= t; i++)
     {
@@ -60,11 +57,9 @@ int main()
     }
     cout << b_min << " " << b_max << endl;
 
-    // 计算a列、b列的区块跨度
     double a_bin_span = (a_max - a_min) / bin;
     double b_bin_span = (b_max - b_min) / bin;
 
-    // 计算原始二维概率分布
     double pmf_original_min = 100;
     for (i = 0; i <= bin - 1; i++)
     {
@@ -86,7 +81,6 @@ int main()
         }
     }
 
-    // 输出原始PMF
     for (i = 0; i <= bin - 1; i++)
     {
         for (j = 0; j <= bin - 1; j++)
@@ -97,7 +91,6 @@ int main()
     }
     outfile_1.close();
 
-    // 对每个区块计算Ensemble-averaged Boltzmann factor
     double Boltzmann_factor_sum = 0;
     for (i = 0; i <= bin - 1; i++)
     {
@@ -123,7 +116,6 @@ int main()
         }
     }
 
-    // 计算加权二维概率分布
     double pmf_reweight_min = 100;
     for (i = 0; i <= bin - 1; i++)
     {
@@ -136,7 +128,6 @@ int main()
         }
     }
 
-    // 输出加权PMF
     for (i = 0; i <= bin - 1; i++)
     {
         for (j = 0; j <= bin - 1; j++)
