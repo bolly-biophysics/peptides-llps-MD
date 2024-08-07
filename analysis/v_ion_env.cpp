@@ -39,7 +39,6 @@ int main()
         return -1;
     }
 
-    // 将原子坐标格式化存入结构数组
     int i = 1, j, k, l, t;
     float aa;
     while (!infile.eof())
@@ -66,7 +65,6 @@ int main()
     outfile_3.open("v_NA_dis.dat", ios::out | ios::ate);
     outfile_4.open("v_CL_dis.dat", ios::out | ios::ate);
 
-    // 计算NA离子速度随时间的变化
     for (i = 1; i <= t - 1; i++)
     {
         for (j = N_PEP + 1; j <= N_PEP + N_NA; j++)
@@ -75,7 +73,6 @@ int main()
         }
     }
 
-    // 计算CL离子速度随时间的变化
     for (i = 1; i <= t - 1; i++)
     {
         for (j = N_PEP + N_NA + 1; j <= N_PEP + N_NA + N_CL; j++)
@@ -84,7 +81,6 @@ int main()
         }
     }
 
-    // 计算ARG电正中心1随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 1; j <= 30; j = j + 3)
@@ -101,7 +97,6 @@ int main()
         }
     }
 
-    // 计算ARG电正中心2随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 2; j <= 30; j = j + 3)
@@ -118,7 +113,6 @@ int main()
         }
     }
 
-    // 计算ARG中O原子随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 3; j <= 30; j = j + 3)
@@ -135,7 +129,6 @@ int main()
         }
     }
     
-    // 计算ASP电负中心1随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 31; j <= 60; j = j + 3)
@@ -152,7 +145,6 @@ int main()
         }
     }
 
-    // 计算ASP电负中心2随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 32; j <= 60; j = j + 3)
@@ -169,7 +161,6 @@ int main()
         }
     }
 
-    // 计算ASP中O原子随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 33; j <= 60; j = j + 3)
@@ -186,7 +177,6 @@ int main()
         }
     }
     
-    // 计算NA离子周围电负环境随时间的变化
     int count;
     float dist_n1, dist_n2, dist_no, dist_po;
     for (i = 1; i <= t; i++)
@@ -212,7 +202,6 @@ int main()
         }
     }
     
-    // 计算CL离子周围电正环境随时间的变化
     float dist_p1, dist_p2;
     for (i = 1; i <= t; i++)
     {
@@ -230,7 +219,6 @@ int main()
         }
     }
     
-    // 计算NA离子速度与电负环境关联的二维分布
     for (i = 0; i <= 30; i++)
     {
         for (j = 0; j <= 6; j++)
@@ -254,7 +242,6 @@ int main()
     }
     outfile_1.close();
     
-    // 计算CL离子速度与电正环境关联的二维分布
     for (i = 0; i <= 30; i++)
     {
         for (j = 0; j <= 6; j++)
@@ -278,7 +265,6 @@ int main()
     }
     outfile_2.close();
 
-    // 统计NA离子的速度分布
     for (i = 0; i <= 120; i++)
     {
         count = 0;
@@ -295,7 +281,6 @@ int main()
     }
     outfile_3.close();
 
-    // 统计CL离子的速度分布
     for (i = 0; i <= 120; i++)
     {
         count = 0;
