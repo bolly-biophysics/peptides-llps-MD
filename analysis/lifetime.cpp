@@ -33,7 +33,7 @@ int main()
         return -1;
     }
 
-    // 将P原子坐标格式化存入结构数组
+    // Format the coordinates of P atoms and store them in a structural array
     int i = 1, j, k, l, m, t, count;
     float aa;
     while (!infile.eof())
@@ -61,7 +61,6 @@ int main()
     outfile_4.open("lifetime_dis_2.dat", ios::out | ios::ate);
     outfile_5.open("s_b_series.dat", ios::out | ios::ate);
 
-    // 计算ARG电正中心1随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 1; j <= 30; j = j + 3)
@@ -78,7 +77,6 @@ int main()
         }
     }
 
-    // 计算ARG电正中心2随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 2; j <= 30; j = j + 3)
@@ -95,7 +93,6 @@ int main()
         }
     }
 
-    // 计算ARG电正中心3随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 3; j <= 30; j = j + 3)
@@ -112,7 +109,6 @@ int main()
         }
     }
     
-    // 计算ASP电负中心1随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 31; j <= 50; j = j + 2)
@@ -129,7 +125,6 @@ int main()
         }
     }
 
-    // 计算ASP电负中心2随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 32; j <= 50; j = j + 2)
@@ -146,7 +141,6 @@ int main()
         }
     }
     
-    // 计算正负残基对之间盐桥数目随时间的变化
     float d[5];
     for (i = 1; i <= t; i++)
     {
