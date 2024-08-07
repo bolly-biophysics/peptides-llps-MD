@@ -33,7 +33,6 @@ int main()
         return -1;
     }
 
-    // 将P原子坐标格式化存入结构数组
     int i = 1, j, k, l, t;
     float aa;
     while (!infile.eof())
@@ -60,7 +59,6 @@ int main()
     outfile_3.open("p_env_series.dat", ios::out | ios::ate);
     outfile_4.open("n_env_series.dat", ios::out | ios::ate);
 
-    // 计算ARG电正中心1随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 1; j <= 20; j = j + 2)
@@ -77,7 +75,6 @@ int main()
         }
     }
 
-    // 计算ARG电正中心2随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 2; j <= 20; j = j + 2)
@@ -94,7 +91,6 @@ int main()
         }
     }
     
-    // 计算ASP电负中心1随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 21; j <= 40; j = j + 2)
@@ -111,7 +107,6 @@ int main()
         }
     }
 
-    // 计算ASP电负中心2随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 22; j <= 40; j = j + 2)
@@ -128,7 +123,6 @@ int main()
         }
     }
 
-    // 计算ARG电正中心1速度随时间的变化
     for (i = 1; i <= t - 1; i++)
     {
         for (j = 1; j <= 20; j++)
@@ -137,7 +131,6 @@ int main()
         }
     }
 
-    // 计算ARG电正中心2速度随时间的变化
     for (i = 1; i <= t - 1; i++)
     {
         for (j = 1; j <= 20; j++)
@@ -146,7 +139,6 @@ int main()
         }
     }
 
-    // 计算ASP电负中心1速度随时间的变化
     for (i = 1; i <= t - 1; i++)
     {
         for (j = 1; j <= 20; j++)
@@ -155,7 +147,6 @@ int main()
         }
     }
 
-    // 计算ASP电负中心2速度随时间的变化
     for (i = 1; i <= t - 1; i++)
     {
         for (j = 1; j <= 20; j++)
@@ -164,7 +155,6 @@ int main()
         }
     }
     
-    // 计算ARG周围电负环境随时间的变化
     int count;
     float d_p1n1, d_p1n2, d_p2n1, d_p2n2;
     for (i = 1; i <= t; i++)
@@ -185,7 +175,6 @@ int main()
         }
     }
     
-    // 计算ASP周围电负环境随时间的变化
     float d_n1p1, d_n1p2, d_n2p1, d_n2p2;
     for (i = 1; i <= t; i++)
     {
@@ -205,7 +194,6 @@ int main()
         }
     }
 
-    // 统计ARG周围电负环境的分布
     for (i = 0; i <= 4; i++)
     {
         count = 0;
@@ -222,7 +210,6 @@ int main()
     }
     outfile_1.close();
 
-    // 统计ASP周围电正环境的分布
     for (i = 0; i <= 4; i++)
     {
         count = 0;
@@ -239,7 +226,6 @@ int main()
     }
     outfile_2.close();
 
-    // 输出环境序列数据
     for (i = 1; i <= t; i = i + 10)
     {
         for (j = 1; j <= 20; j++)
