@@ -36,7 +36,6 @@ int main()
         return -1;
     }
 
-    // 将静电环境坐标格式化存入结构数组
     int i = 1, j, k, l, m, t;
     float aa;
     while (!infile.eof())
@@ -65,7 +64,6 @@ int main()
         return -1;
     }
 
-    // 将CZ原子坐标格式化存入结构数组
     i = 1;
     while (!infile.eof())
     {
@@ -91,7 +89,6 @@ int main()
     //outfile_3.open("CZ_pair_dist.dat", ios::out | ios::ate);
     //outfile_4.open("CZ_pair_env.dat", ios::out | ios::ate);
 
-    // 计算ARG电正中心随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 1; j <= 20; j = j + 2)
@@ -108,7 +105,6 @@ int main()
         }
     }
     
-    // 计算ASP电负中心随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 21; j <= 40; j = j + 2)
@@ -125,7 +121,6 @@ int main()
         }
     }
 
-    // 计算CZ周围ARG给予电正环境随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 1; j <= 20; j++)
@@ -138,7 +133,6 @@ int main()
         }
     }
 
-    // 计算CZ周围ASP给予电负环境随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 1; j <= 20; j++)
@@ -151,7 +145,6 @@ int main()
         }
     }
 
-    // 计算CZ配对之间距离以及总环境随时间的变化
     for (i = 1; i <= t; i++)
     {
         for (j = 1; j <= 20; j++)
@@ -164,7 +157,6 @@ int main()
         }
     }
 
-    // 计算CZ配对之间距离以及总环境随时间的变化（累积）
     float CZ_pair_dist_tmp, CZ_pair_env_tmp;
     for (i = 1; i <= t; i = i + interval)
     {
@@ -189,7 +181,6 @@ int main()
     }
     outfile_1.close();
 
-    // 计算CZ配对之间距离以及总环境关联的二维分布
     int count;
     for (i = 0; i <= 60; i++)
     {
@@ -220,7 +211,6 @@ int main()
     }
     outfile_2.close();
 
-    // 计算CZ配对之间距离及总环境的平均值
 /*    for (i = 1; i <= 20; i++)
     {
         for (j = 1; j <= 20; j++)
