@@ -32,7 +32,7 @@ int main()
         return -1;
     }
 
-    // 将原子坐标格式化存入结构数组
+    // Format atomic coordinates and store them in a structural array
     int i = 1, j, k, l, t;
     float aa;
     while (!infile.eof())
@@ -57,7 +57,7 @@ int main()
     outfile_1.open("bridge_NA.dat", ios::out | ios::ate);
     outfile_2.open("bridge_CL.dat", ios::out | ios::ate);
 
-    // 计算侧链电荷中心1随时间的变化
+    // Calculate the temporal variation of side chain charge center 1
     for (i = 1; i <= t; i++)
     {
         for (j = 1; j <= N_PEP; j = j + 2)
@@ -68,7 +68,7 @@ int main()
         }
     }
 
-    // 计算侧链电荷中心2随时间的变化
+    // Calculate the temporal variation of side chain charge center 2
     for (i = 1; i <= t; i++)
     {
         for (j = 2; j <= N_PEP; j = j + 2)
@@ -79,7 +79,7 @@ int main()
         }
     }
     
-    // 计算两两电荷中心共享NA离子个数随时间的变化
+    // Calculate the variation of the number of NA ions shared by two charge centers over time
     float d_i1, d_i2, d_j1, d_j2;
     for (i = 1; i <= 40; i++)
     {
@@ -104,7 +104,7 @@ int main()
         }
     }
 
-    // 计算两两电荷中心共享NA离子个数的平均值
+    // Calculate the average number of NA ions shared between two charge centers
     for (i = 1; i <= 40; i++)
     {
         for (j = 1; j <= 40; j++)
@@ -118,7 +118,7 @@ int main()
         }
     }
 
-    // 计算两两电荷中心共享NA离子个数的标准差
+    // Calculate the standard deviation of the number of NA ions shared between two charge centers
     for (i = 1; i <= 40; i++)
     {
         for (j = 1; j <= 40; j++)
@@ -135,7 +135,7 @@ int main()
     }
     outfile_1.close();
 
-    // 计算两两电荷中心共享CL离子个数随时间的变化
+    // Calculate the variation of the number of CL ions shared by two charge centers over time
     for (i = 1; i <= 40; i++)
     {
         for (j = 1; j <= 40; j++)
@@ -159,7 +159,7 @@ int main()
         }
     }
 
-    // 计算两两电荷中心共享CL离子个数的平均值
+    // Calculate the average number of CL ions shared between two charge centers
     for (i = 1; i <= 40; i++)
     {
         for (j = 1; j <= 40; j++)
@@ -173,7 +173,7 @@ int main()
         }
     }
 
-    // 计算两两电荷中心共享CL离子个数的标准差
+    // Calculate the standard deviation of the number of CL ions shared by two charge centers
     for (i = 1; i <= 40; i++)
     {
         for (j = 1; j <= 40; j++)
