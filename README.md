@@ -1,3 +1,5 @@
+This work mainly discusses the aggregation characteristics of charged peptide chains in ionic environments. The relevant files are explained as follows:
+
 The AIMD folder contains two initial inp files (2-Arg system and 2-Asp system), and a program for analyzing the distance between sodium ions and oxygen atoms.
 
 The GaMD folder contains initial structure file, force field file, simulation control file, as well as a program for performing reweighting analysis.
